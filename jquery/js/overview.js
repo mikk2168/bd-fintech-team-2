@@ -58,7 +58,7 @@ var overview = (function(){
 
 	//build some account data arrays
 	var setAccountData = function(){
-		for(var i = 0; i < accounts.length - 1; i++){
+		for(var i = 0; i < accounts.length; i++){
 			accountNames.push(accounts[i].name);
 			accountBalances.push(accounts[i].balance);
 		}
