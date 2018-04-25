@@ -34,6 +34,9 @@ var overview = (function(){
 	//fetch accounts and create chart
 	var refreshCurrentBalanceChart = function(){
 		service.fetchAccounts(function(response){
+	        accountNames = [];
+	        accountBalances = [];
+	        transactions = [];
 			accounts = response.accounts;
 			setAccountData();
 			setupCurrentBalanceChart();
