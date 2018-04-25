@@ -81,8 +81,7 @@ var overview = (function(){
 	            categories: accountNames
 	        },
 	        yAxis: {
-				title: '',
-				reversed: 'false'
+				title: ''
 	        },
 	        tooltip: {
 	            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
