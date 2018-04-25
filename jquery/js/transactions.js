@@ -17,6 +17,7 @@ var transactions = (function(){
 	//fetches accounts, sets initial data and binds click listeners on success callback
 	var updateAccounts = function(){
 		service.fetchAccounts(function(response){
+            currentPage = 1;
 			accounts = response.accounts;
 			var accountNumber = getURLParameter("account");
 			if(accountNumber !== undefined){
