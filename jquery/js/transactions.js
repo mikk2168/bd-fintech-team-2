@@ -70,7 +70,7 @@ var transactions = (function(){
 		transactions = [];
 		$(".accounts .account a").removeClass("selected");
 		$(".accounts .account a[data-id='" + accNbr + "']").addClass("selected");
-		setBalanceUI(accounts[0].balance);
+		setBalanceUI(getAccountById(accNbr).balance);
 		updateTransactions(accNbr, currentPage);
 		history.pushState(null, null, './transactions.html?account=' + accNbr);
 	};
@@ -84,8 +84,9 @@ var transactions = (function(){
 	var setTransactionsUI = function(){
 		$(".transactions").empty();
 		for(var i = 0; i < transactions.length; i++){
+			var d = new Date(transactions[i].trx_time);
 			$(".transactions").append("<li class='transaction'>"
-							+ "<div class='date'>" + transactions[i].trx_time + "</div>"
+							+ "<div class='date'>" + d.getDate() + "." + (d.getMonth() + 1) + "." + d.getFullYear() + "</div>"
 							+ "<div class='category'>" + transactions[i].trx_subcategory + " - " + transactions[i].trxcategory + "</div>"
 							+ "<div class='text'>" + transactions[i].trx_description + "</div>"
 							+ "<div class='amount'>" + transactions[i].trx_ammount + "</div>"
