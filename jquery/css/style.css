@@ -56,8 +56,12 @@ header {
 }
 
 header a {
-	text-decoration: none;
+	text-decoration: underline;
 	color: white;
+}
+
+a, a .name {
+	text-decoration: underline;
 }
 
 header .triangle1 {
@@ -95,7 +99,7 @@ header .triangle3 {
 }
 
 .nav-link {
-	text-decoration: none;
+	text-decoration: underline;
 	color: black;
 }
 
@@ -121,6 +125,7 @@ header .triangle3 {
 /*forside*/
 #front .accounts a {
 	color: #249aff;
+    text-decoration: underline;
 }
 
 #front .accounts {
@@ -151,7 +156,7 @@ header .triangle3 {
 }
 
 #transactions .account a {
-	text-decoration: none;
+	text-decoration: underline;
 	color: #000;
 }
 
