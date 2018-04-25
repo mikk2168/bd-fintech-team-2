@@ -72,6 +72,7 @@ var transactions = (function(){
 		$(".accounts .account a[data-id='" + accNbr + "']").addClass("selected");
 		setBalanceUI(accounts[0].balance);
 		updateTransactions(accNbr, currentPage);
+		history.pushState(null, null, './transactions.html?account=' + accNbr);
 	};
 
 	//sets balance (saldo) in UI
