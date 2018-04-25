@@ -1,5 +1,9 @@
 $(document).ready(function() {
     bot.init();
+    $('#chat-window').bind("DOMSubtreeModified",function(){
+        var objDiv = document.getElementById("chat-window");
+        objDiv.scrollTop = objDiv.scrollHeight;
+    });
 });
 
 var bot = (function(){
