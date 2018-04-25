@@ -1,3 +1,9 @@
+$.fn.digits = function(){ 
+    return this.each(function(){ 
+        $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.") ); 
+    })
+}
+
 jQuery(document).ready(function() {
   
   var btn = $('#button');
@@ -97,7 +103,7 @@ var transactions = (function(){
 
 	//sets balance (saldo) in UI
 	var setBalanceUI = function(balance){
-		$(".balance").html(balance + " kr");
+		$(".balance").html(balance.toFixed(2) + " kr");
 	};
 
 	//appends the fetched transactions in UI
@@ -109,8 +115,9 @@ var transactions = (function(){
 							+ "<div class='date'>" + d.getDate() + "." + (d.getMonth() + 1) + "." + d.getFullYear() + "</div>"
 							+ "<div class='category'>" + transactions[i].trx_subcategory + " - " + transactions[i].trxcategory + "</div>"
 							+ "<div class='text'>" + transactions[i].trx_description + "</div>"
-							+ "<div class='amount'>" + transactions[i].trx_ammount + "</div>"
+							+ "<div class='amount'>" + transactions[i].trx_ammount.toFixed(2).replace(".",",") + "</div>"
 							+ "</li>");
+			$(".amount").digits();
 		}
 	};
 

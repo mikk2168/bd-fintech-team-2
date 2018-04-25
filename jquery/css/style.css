@@ -171,6 +171,11 @@ header .triangle3 {
 	background: #eee;
 }
 
+#transactions .transaction .amount {
+	float: right;
+	text-align: right;
+}
+
 #transactions .transaction div {
 	float: left;
 	width: 25%;
