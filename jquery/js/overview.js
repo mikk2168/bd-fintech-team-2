@@ -18,7 +18,7 @@ var overview = (function(){
 	var findTransactionsWithMinAmount = function(transactions, min){
 		var newTransactions = [];
 		for(var i = 0; i < transactions.length; i++){
-			if(transactions[i].trx_ammount < min){
+			if(transactions[i].trx_ammount > min){
 				newTransactions.push(transactions[i]);
 			}
 		}
